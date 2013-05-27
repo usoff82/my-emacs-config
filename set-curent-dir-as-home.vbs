@@ -1,0 +1,2 @@
+WScript.CreateObject("WScript.Shell").RegWrite "HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs\HOME", CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName), "REG_SZ"
+MsgBox "HOME="& WScript.CreateObject("WScript.Shell").RegRead("HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs\HOME")

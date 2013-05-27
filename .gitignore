@@ -1,0 +1,11 @@
+.ipython
+python-contrib
+*.ido.last
+/.emacs.d/.smex-items
+/.emacs.d/ac-comphist.dat
+semanticdb
+backups
+auto-save-list
+.smex-items
+/.emacs.d/places
+ede-projects.el
