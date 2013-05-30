@@ -3,20 +3,6 @@
 (defvar *emacs-load-start* (current-time))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Загрузк пакетов ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; This was installed by package-install.el.
-;;; This provides support for the package system and
-;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-    (package-initialize))
-;; use more repositories for elpa
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-			 ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
-
 ;; Добавляет в load-path все каталоги из ~/.emacs.d
 (let ((base "~/.emacs.d"))
   (add-to-list 'load-path base)
@@ -26,6 +12,14 @@
                  (not (equal f ".."))
                  (not (equal f ".")))
         (add-to-list 'load-path name)))))
+
+;; use more repositories for elpa
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+			 ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(require 'package)
+(package-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Управление ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Настройка мыши
@@ -52,7 +46,7 @@
 ;; Настройка кодировок, Переключение кодировок по F5
 (require 'emacs-rc-evm-coding-systems)
 
-; сохранение окон
+;; сохранение окон
 ;(desktop-save-mode 1)
 
 ; Созранение последнего места
@@ -67,9 +61,6 @@
 
 ;; Pretty diff mode
 (require 'emacs-rc-pretty-diff-mode)
-
-;; Включение поддрержки Subversion 1.7
-(require 'vc-svn17)
 
 ;; Анотация кода
 ;(require 'emacs-rc-annotation)
@@ -126,5 +117,5 @@
 (put 'ido-exit-minibuffer 'disabled nil)
 
 ;; Loading benchmark
-;;(message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
-;;                                     (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+;(message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
+;                                     (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
