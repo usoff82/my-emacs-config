@@ -30,7 +30,7 @@
      ;; Настройка IPython
      (setq
       python-shell-interpreter "C:\\Python27\\python.exe"
-      python-shell-interpreter-args "-i C:\\Python27\\Scripts\\ipython-script.py"
+      python-shell-interpreter-args "-i C:\\Python27\\Scripts\\ipython-script.py console"
       python-shell-prompt-regexp "In \\[[0-9]+\\]: "
       python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
       python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
