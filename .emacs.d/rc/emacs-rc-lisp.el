@@ -6,7 +6,10 @@
     (modify-syntax-entry char "w" lisp-interaction-mode-syntax-table)
     (modify-syntax-entry char "w" emacs-lisp-mode-syntax-table)))
 
-; Автодополнение функций для Elisp
+;; Подсвечивать текущее выражение
+(setq show-paren-style 'expression)
+
+;; Автодополнение функций для Elisp
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/dict")
 ;(global-auto-complete-mode t)

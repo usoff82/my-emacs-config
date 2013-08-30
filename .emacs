@@ -1,7 +1,7 @@
-;; loading benchmark
-(require 'cl)
+;; Start benchmark
 (defvar *emacs-load-start* (current-time))
 
+(require 'cl)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Загрузк пакетов ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Добавляет в load-path все каталоги из ~/.emacs.d
 (let ((base "~/.emacs.d"))
@@ -25,9 +25,11 @@
 ;; Настройка мыши
 (require 'emacs-rc-mouse)
 
-;; Настройка горячих клавиш
-(require 'emacs-rc-kbd)
+;; Эргоемакс, нужно закоментировать в ergoemacs-themes.el переопределение клавиш <M-up> <M-down> <M-left> <M-right>
+(ergoemacs-mode 1)
 
+;; Настройка горячих клавиш
+;(require 'emacs-rc-kbd)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Внешний вид ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Общие настройки
@@ -42,6 +44,14 @@
 
 ;; Нормальный speedbar
 (require 'sr-speedbar)
+
+;; Покзывать номера строк
+(global-linum-mode 1)
+
+;; Автодополнеие в коммандной строке
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
 
 ;; Настройка кодировок, Переключение кодировок по F5
 (require 'emacs-rc-evm-coding-systems)
@@ -96,26 +106,30 @@
 
 ; Custom setings
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
+ '(ergoemacs-keyboard-layout "us")
+ '(ergoemacs-mode-used "5.8.0")
+ '(ergoemacs-theme nil)
+ '(ergoemacs-use-menus t)
  '(fringe-mode nil nil (fringe))
  '(indicate-buffer-boundaries (quote left))
  '(pdb-path (quote C:/Python27/Lib/pdb\.py))
  '(tool-bar-mode nil)
- '(truncate-lines t))
+ '(truncate-lines t)
+ '(windmove-default-keybindings (quote meta)))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#3f3f3f" :foreground "#dcdccc" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "outline" :family "Consolas")))))
 (put 'ido-exit-minibuffer 'disabled nil)
 
-;; Loading benchmark
-;(message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
-;                                     (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+;; Stop benchmark
+(message "My .emacs loaded in %ds" (float-time (time-subtract (current-time) *emacs-load-start*)))

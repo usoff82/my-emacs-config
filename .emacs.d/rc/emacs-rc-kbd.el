@@ -7,11 +7,11 @@
 (windmove-default-keybindings 'meta)
 
 ;; Переключение буферов 
-(global-set-key [(control tab)] 'next-buffer)
-(global-set-key [(control shift tab)] 'previous-buffer)
+;(global-set-key [(control tab)] 'next-buffer)
+;(global-set-key [(control shift tab)] 'previous-buffer)
 
 ;; Выделить все
-(global-set-key [(control a)] 'mark-whole-buffer)
+;(global-set-key [(control a)] 'mark-whole-buffer)
 
 ;; Закрыть текущий буффер
 (global-set-key (kbd "<M-f4>") 'kill-this-buffer)
