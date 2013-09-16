@@ -56,6 +56,9 @@
 ;; Настройка кодировок, Переключение кодировок по F5
 (require 'emacs-rc-evm-coding-systems)
 
+;; Redo
+;(require 'redo+)
+
 ;; сохранение окон
 ;(desktop-save-mode 1)
 
