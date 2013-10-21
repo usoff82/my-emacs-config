@@ -1,4 +1,3 @@
-
 ;;; smartrep.el --- Support sequential operation which omitted prefix keys.
 
 ;; Filename: smartrep.el
@@ -7,7 +6,8 @@
 ;; Maintainer: myuhe
 ;; Copyright (C) :2011,2012 myuhe all rights reserved.
 ;; Created: :2011-12-19
-;; Version: 0.0.3
+;; Version: 20130312.1839
+;; X-Original-Version: 0.0.3
 ;; Keywords: convenience
 ;; URL: https://github.com/myuhe/smartrep.el
 
@@ -28,13 +28,13 @@
 
 ;;; Commentary:
 
-;;
 ;; Installation:
 ;;   Put the smartrep.el to your load-path.
 ;;   And add to .emacs: (require 'smartrep)
 
 ;;; Changelog:
 
+;; 2012-01-06 Remove unnecessary cord.
 ;; 2012-01-06 read-key is replaced read-event for compatibility. thanks @tomy_kaira !!
 ;; 2012-01-11 Support function calling form. (buzztaiki)
 ;;            Call interactively when command. (buzztaiki) 
@@ -50,6 +50,10 @@
 
 (defvar smartrep-key-string nil)
 
+(defvar smartrep-read-event
+  (if (fboundp 'read-event) 'read-event 'read-key)
+  "Function to be used for reading keyboard events.")
+
 (defvar smartrep-mode-line-string nil
   "Mode line indicator for smartrep.")
 
@@ -58,6 +62,9 @@
 (defvar smartrep-global-alist-hash (make-hash-table :test 'equal))
 
 (defvar smartrep-mode-line-active-bg (face-background 'highlight))
+
+(defvar smartrep-original-position nil
+  "A cons holding the point and window-start when smartrep is invoked.")
 
 (let ((cell (or (memq 'mode-line-position mode-line-format) 
 		(memq 'mode-line-buffer-identification mode-line-format))) 
@@ -104,29 +111,25 @@
   (interactive)
   (setq smartrep-mode-line-string smartrep-mode-line-string-activated)
   (let ((ml-original-bg (face-background 'mode-line)))
-      (set-face-background 'mode-line smartrep-mode-line-active-bg)
-      (force-mode-line-update)
+      (when smartrep-mode-line-active-bg
+        (set-face-background 'mode-line smartrep-mode-line-active-bg)
+        (force-mode-line-update))
       (setq smartrep-original-position (cons (point) (window-start)))
       (unwind-protect
           (let ((repeat-repeat-char last-command-event))
-            (if (memq last-repeatable-command
-                      '(exit-minibuffer
-                        minibuffer-complete-and-exit
-                        self-insert-and-exit))
-                (let ((repeat-command (car command-history)))
-                  (eval repeat-command))
-              (smartrep-do-fun repeat-repeat-char lst))
+              (smartrep-do-fun repeat-repeat-char lst)
             (when repeat-repeat-char
               (smartrep-read-event-loop lst)))
         (setq smartrep-mode-line-string "")
-        (set-face-background 'mode-line ml-original-bg)
-        (force-mode-line-update))))
+        (when smartrep-mode-line-active-bg
+          (set-face-background 'mode-line ml-original-bg)
+          (force-mode-line-update)))))
 
 (defun smartrep-read-event-loop (lst)
   (lexical-let ((undo-inhibit-record-point t))
     (unwind-protect
         (while
-            (lexical-let ((evt (read-key)))
+            (lexical-let ((evt (funcall smartrep-read-event)))
               ;; (eq (or (car-safe evt) evt)
               ;;     (or (car-safe repeat-repeat-char)
               ;;         repeat-repeat-char))

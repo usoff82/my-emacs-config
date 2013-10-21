@@ -29,7 +29,7 @@
 (ergoemacs-mode 1)
 
 ;; Настройка горячих клавиш
-;(require 'emacs-rc-kbd)
+(require 'emacs-rc-kbd)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Внешний вид ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Общие настройки
@@ -55,9 +55,6 @@
 
 ;; Настройка кодировок, Переключение кодировок по F5
 (require 'emacs-rc-evm-coding-systems)
-
-;; Redo
-;(require 'redo+)
 
 ;; сохранение окон
 ;(desktop-save-mode 1)
@@ -94,10 +91,11 @@
 (require 'emacs-rc-octave-mode)
 
 ;; Python mode
-;(require 'emacs-rc-python-company)
-;(require 'emacs-rc-python-mode-company)
 (require 'emacs-rc-python-elpy)
- 
+
+;; Log4j moge
+(require 'emacs-rc-log4j-mode)
+
 ;; CEDET
 ;(load-file "~/.emacs.d/rc/emacs-rc-cedet.el")
 ;(require 'emacs-rc-cedet)
@@ -116,7 +114,10 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
+ '(ein:use-auto-complete t)
+ '(ein:use-auto-complete-superpack t)
  '(ergoemacs-keyboard-layout "us")
+ '(ergoemacs-mode t)
  '(ergoemacs-mode-used "5.8.0")
  '(ergoemacs-theme nil)
  '(ergoemacs-use-menus t)

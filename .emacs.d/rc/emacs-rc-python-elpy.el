@@ -28,32 +28,37 @@
 ;     (setq ropemacs-enable-autoimport t)
      
      ;; Настройка IPython
-     (setq
-      python-shell-interpreter "C:\\Python27\\python.exe"
-      python-shell-interpreter-args "-i C:\\Python27\\Scripts\\ipython-script.py console"
-      python-shell-prompt-regexp "In \\[[0-9]+\\]: "
-      python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
-      python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
-      python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
-      python-shell-completion-string-code  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+      (elpy-use-ipython)
+      (setq
+       python-shell-interpreter "C:\\Python27\\python.exe"
+       python-shell-interpreter-args
+        "-i C:\\Python27\\Scripts\\ipython-script.py")
+;     (setq
+;      python-shell-interpreter "C:\\Python27\\python.exe"
+;      python-shell-interpreter-args "-i C:\\Python27\\Scripts\\ipython-script.py console"
+;      python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+;      python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+;      python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
+;      python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
+;      python-shell-completion-string-code  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 
      ;; Показывать редактируемую функцию
      (which-function-mode t)
 
-     ;; Проверка синтаксиса с помощю flymake
-     (when (load "flymake" t)
-       (defun flymake-pyflakes-init ()
-         (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                            'flymake-create-temp-inplace))
-                (local-file (file-relative-name
-                             temp-file
-                             (file-name-directory buffer-file-name))))
-           (list "pyflakes" (list local-file))))
-       (add-to-list 'flymake-allowed-file-name-masks
-                    '("\\.py\\'" flymake-pyflakes-init)))
-     (add-hook 'find-file-hook 'flymake-find-file-hook)
-     
+;     ;; Проверка синтаксиса с помощю flymake
+;     (when (load "flymake" t)
+;       (defun flymake-pyflakes-init ()
+;         (let* ((temp-file (flymake-init-create-temp-buffer-copy
+;                            'flymake-create-temp-inplace))
+;                (local-file (file-relative-name
+;                             temp-file
+;                             (file-name-directory buffer-file-name))))
+;           (list "pyflakes" (list local-file))))
+;       (add-to-list 'flymake-allowed-file-name-masks
+;                    '("\\.py\\'" flymake-pyflakes-init)))
+;     (add-hook 'find-file-hook 'flymake-find-file-hook)
+;
      ;; Исправляет баг с импортом файлов из текущего каталога
      (defun python-reinstate-current-directory ()
        "When running Python, add the current directory ('') to the head of sys.path.
@@ -170,8 +175,8 @@ the current directory in Python's search path."
        (local-set-key (kbd "<C-kp-add>") 'show-subtree))
      (add-hook 'python-mode-hook 'my-python-outline-hook)
 
-     (add-hook 'python-mode-hook
-          (lambda () (auto-complete-mode 1)))
+;     (add-hook 'python-mode-hook
+;          (lambda () (auto-complete-mode 1)))
 
      ;; Django
 ;     (require 'virtualenv)
