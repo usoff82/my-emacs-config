@@ -56,9 +56,6 @@
 ;; Настройка кодировок, Переключение кодировок по F5
 (require 'emacs-rc-evm-coding-systems)
 
-;; Redo
-;(require 'redo+)
-
 ;; сохранение окон
 (desktop-save-mode 1)
 
@@ -94,8 +91,6 @@
 (require 'emacs-rc-octave-mode)
 
 ;; Python mode
-;(require 'emacs-rc-python-company)
-;(require 'emacs-rc-python-mode-company)
 (require 'emacs-rc-python-elpy)
 
 ;; Log4j moge
@@ -123,6 +118,7 @@
  '(ein:use-auto-complete-superpack t)
  '(eldoc-idle-delay 3)
  '(ergoemacs-keyboard-layout "us")
+ '(ergoemacs-mode t)
  '(ergoemacs-mode-used "5.8.0")
  '(ergoemacs-theme nil)
  '(ergoemacs-use-ergoemacs-metadown nil)

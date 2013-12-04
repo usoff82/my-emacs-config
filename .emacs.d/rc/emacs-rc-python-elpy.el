@@ -144,8 +144,8 @@ the current directory in Python's search path."
        (local-set-key (kbd "<C-kp-add>") 'show-subtree))
      (add-hook 'python-mode-hook 'my-python-outline-hook)
 
-     (add-hook 'python-mode-hook
-          (lambda () (auto-complete-mode 1)))
+;     (add-hook 'python-mode-hook
+;          (lambda () (auto-complete-mode 1)))
 
      ;; Django
 ;     (require 'virtualenv)
