@@ -8,7 +8,7 @@
      font-lock-variable-name-face)))
 (mapcar (lambda (mode)
           (font-lock-add-keywords mode hi-plplus-variables))
-        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode log4j-mode))
+        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode))
 
 ;; Подсветка функций pl+
 (defvar hi-plplus-function
@@ -32,7 +32,7 @@
      font-lock-keyword-face)))
 (mapcar (lambda (mode)
           (font-lock-add-keywords mode hi-bounds))
-        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode log4j-mode octave-mode))
+        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode octave-mode))
 
 ;; Подсветка операторов
 (defvar hi-operators
@@ -40,7 +40,7 @@
      font-lock-builtin-face)))
 (mapcar (lambda (mode)
           (font-lock-add-keywords mode hi-operators))
-        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode log4j-mode octave-mode))
+        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode octave-mode))
 
 ;; Подсветка цифр
 (defvar hi-numbers
@@ -48,7 +48,7 @@
      font-lock-constant-face)))
 (mapcar (lambda (mode)
           (font-lock-add-keywords mode hi-numbers))
-        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode log4j-mode octave-mode))
+        '(perl-mode c++-mode c-mode java-mode python-mode ruby-mode sql-mode plsql-mode octave-mode))
 
 ;; Подсветка строк
 ;(defvar hi-string

@@ -5,7 +5,7 @@
 
 ;;;### (autoloads (ein:connect-to-default-notebook ein:connect-buffer-to-notebook
 ;;;;;;  ein:connect-to-notebook-buffer ein:connect-to-notebook ein:connect-to-notebook-command)
-;;;;;;  "ein-connect" "ein-connect.el" (20902 13347 0 0))
+;;;;;;  "ein-connect" "ein-connect.el" (21071 48644 0 0))
 ;;; Generated autoloads from ein-connect.el
 
 (autoload 'ein:connect-to-notebook-command "ein-connect" "\
@@ -42,7 +42,7 @@ notebook.
 ;;;***
 
 ;;;### (autoloads (ein:console-open) "ein-console" "ein-console.el"
-;;;;;;  (20902 13346 0 0))
+;;;;;;  (21071 48643 0 0))
 ;;; Generated autoloads from ein-console.el
 
 (autoload 'ein:console-open "ein-console" "\
@@ -63,7 +63,7 @@ It should be possible to support python-mode.el.  Patches are welcome!
 
 ;;;### (autoloads (ein:dev-bug-report-template ein:dev-stop-debug
 ;;;;;;  ein:dev-start-debug ein:dev-insert-mode-map) "ein-dev" "ein-dev.el"
-;;;;;;  (20902 13347 0 0))
+;;;;;;  (21071 48644 0 0))
 ;;; Generated autoloads from ein-dev.el
 
 (autoload 'ein:dev-insert-mode-map "ein-dev" "\
@@ -92,7 +92,7 @@ Open a buffer with bug report template.
 
 ;;;### (autoloads (helm-ein-notebook-buffers anything-ein-notebook-buffers
 ;;;;;;  helm-ein-kernel-history anything-ein-kernel-history) "ein-helm"
-;;;;;;  "ein-helm.el" (20902 13346 0 0))
+;;;;;;  "ein-helm.el" (21071 48644 0 0))
 ;;; Generated autoloads from ein-helm.el
 
 (autoload 'anything-ein-kernel-history "ein-helm" "\
@@ -117,8 +117,8 @@ Choose opened notebook using helm interface.
 
 ;;;***
 
-;;;### (autoloads (ein:iexec-mode) "ein-iexec" "ein-iexec.el" (20902
-;;;;;;  13347 0 0))
+;;;### (autoloads (ein:iexec-mode) "ein-iexec" "ein-iexec.el" (21071
+;;;;;;  48644 0 0))
 ;;; Generated autoloads from ein-iexec.el
 
 (autoload 'ein:iexec-mode "ein-iexec" "\
@@ -131,7 +131,7 @@ change in its input area.
 ;;;***
 
 ;;;### (autoloads (ein:ipynb-mode) "ein-ipynb-mode" "ein-ipynb-mode.el"
-;;;;;;  (20902 13346 0 0))
+;;;;;;  (21071 48643 0 0))
 ;;; Generated autoloads from ein-ipynb-mode.el
 
 (autoload 'ein:ipynb-mode "ein-ipynb-mode" "\
@@ -144,7 +144,7 @@ A simple mode for ipynb file.
 ;;;***
 
 ;;;### (autoloads (ein:jedi-setup ein:jedi-dot-complete ein:jedi-complete)
-;;;;;;  "ein-jedi" "ein-jedi.el" (20902 13346 0 0))
+;;;;;;  "ein-jedi" "ein-jedi.el" (21071 48643 0 0))
 ;;; Generated autoloads from ein-jedi.el
 
 (autoload 'ein:jedi-complete "ein-jedi" "\
@@ -172,7 +172,7 @@ To use EIN and Jedi together, add the following in your Emacs setup.::
 ;;;***
 
 ;;;### (autoloads (ein:junk-rename ein:junk-new) "ein-junk" "ein-junk.el"
-;;;;;;  (20902 13346 0 0))
+;;;;;;  (21071 48643 0 0))
 ;;; Generated autoloads from ein-junk.el
 
 (autoload 'ein:junk-new "ein-junk" "\
@@ -192,7 +192,7 @@ and save it immediately.
 
 ;;;***
 
-;;;### (autoloads nil "ein-kernel" "ein-kernel.el" (20902 13345 0
+;;;### (autoloads nil "ein-kernel" "ein-kernel.el" (21071 48643 0
 ;;;;;;  0))
 ;;; Generated autoloads from ein-kernel.el
 
@@ -203,7 +203,7 @@ and save it immediately.
 ;;;***
 
 ;;;### (autoloads (ein:notebook-multilang-mode) "ein-multilang" "ein-multilang.el"
-;;;;;;  (20902 13346 0 0))
+;;;;;;  (21071 48643 0 0))
 ;;; Generated autoloads from ein-multilang.el
 
 (autoload 'ein:notebook-multilang-mode "ein-multilang" "\
@@ -213,7 +213,7 @@ Notebook mode with multiple language fontification.
 
 ;;;***
 
-;;;### (autoloads nil "ein-notebook" "ein-notebook.el" (20902 13346
+;;;### (autoloads nil "ein-notebook" "ein-notebook.el" (21071 48643
 ;;;;;;  0 0))
 ;;; Generated autoloads from ein-notebook.el
 
@@ -224,7 +224,7 @@ Notebook mode with multiple language fontification.
 ;;;### (autoloads (ein:notebooklist-load ein:notebooklist-open-notebook-global
 ;;;;;;  ein:notebooklist-list-notebooks ein:notebooklist-new-notebook-with-name
 ;;;;;;  ein:notebooklist-new-notebook ein:notebooklist-reload ein:notebooklist-open)
-;;;;;;  "ein-notebooklist" "ein-notebooklist.el" (20902 13347 0 0))
+;;;;;;  "ein-notebooklist" "ein-notebooklist.el" (21071 48644 0 0))
 ;;; Generated autoloads from ein-notebooklist.el
 
 (autoload 'ein:notebooklist-open "ein-notebooklist" "\
@@ -286,7 +286,7 @@ See also:
 ;;;***
 
 ;;;### (autoloads (ein:org-store-link ein:org-open) "ein-org" "ein-org.el"
-;;;;;;  (20902 13345 0 0))
+;;;;;;  (21071 48642 0 0))
 ;;; Generated autoloads from ein-org.el
 
 (autoload 'ein:org-open "ein-org" "\
@@ -322,7 +322,7 @@ node `(org) External links' and Info node `(org) Search options'
 ;;;***
 
 ;;;### (autoloads (ein:pseudo-console-mode) "ein-pseudo-console"
-;;;;;;  "ein-pseudo-console.el" (20902 13345 0 0))
+;;;;;;  "ein-pseudo-console.el" (21071 48642 0 0))
 ;;; Generated autoloads from ein-pseudo-console.el
 
 (autoload 'ein:pseudo-console-mode "ein-pseudo-console" "\
@@ -334,7 +334,7 @@ Pseudo console mode.  Hit RET to execute code.
 
 ;;;### (autoloads (ein:shared-output-eval-string ein:shared-output-show-code-cell-at-point
 ;;;;;;  ein:shared-output-pop-to-buffer) "ein-shared-output" "ein-shared-output.el"
-;;;;;;  (20902 13347 0 0))
+;;;;;;  (21071 48644 0 0))
 ;;; Generated autoloads from ein-shared-output.el
 
 (autoload 'ein:shared-output-pop-to-buffer "ein-shared-output" "\
@@ -364,7 +364,7 @@ shared output buffer.  You can open the buffer by the command
 ;;;***
 
 ;;;### (autoloads (ein:tb-show) "ein-traceback" "ein-traceback.el"
-;;;;;;  (20902 13345 0 0))
+;;;;;;  (21071 48643 0 0))
 ;;; Generated autoloads from ein-traceback.el
 
 (autoload 'ein:tb-show "ein-traceback" "\
@@ -381,7 +381,7 @@ Show full traceback in traceback viewer.
 ;;;;;;  "ein-pager.el" "ein-pkg.el" "ein-python.el" "ein-pytools.el"
 ;;;;;;  "ein-query.el" "ein-scratchsheet.el" "ein-smartrep.el" "ein-subpackages.el"
 ;;;;;;  "ein-utils.el" "ein-websocket.el" "ein-worksheet.el" "ein.el"
-;;;;;;  "zeroein.el") (20902 13347 532000 0))
+;;;;;;  "zeroein.el") (21071 48644 547000 0))
 
 ;;;***
 

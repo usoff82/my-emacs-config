@@ -29,7 +29,7 @@
 (ergoemacs-mode 1)
 
 ;; Настройка горячих клавиш
-;(require 'emacs-rc-kbd)
+(require 'emacs-rc-kbd)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Внешний вид ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Общие настройки
@@ -60,12 +60,12 @@
 ;(require 'redo+)
 
 ;; сохранение окон
-;(desktop-save-mode 1)
+(desktop-save-mode 1)
 
 ; Созранение последнего места
-;(require 'saveplace)
-;(setq-default save-place t)
-;(savehist-mode t)
+(require 'saveplace)
+(setq-default save-place t)
+(savehist-mode t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Программные режимыы ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -97,6 +97,9 @@
 ;(require 'emacs-rc-python-company)
 ;(require 'emacs-rc-python-mode-company)
 (require 'emacs-rc-python-elpy)
+
+;; Log4j moge
+(require 'emacs-rc-log4j-mode)
  
 ;; CEDET
 ;(load-file "~/.emacs.d/rc/emacs-rc-cedet.el")
@@ -106,22 +109,30 @@
 ;(load-file "~/.emacs.d/rc/emacs-rc-ecb.el")
 ;(require 'emacs-rc-ecb)
 
-
 ; Custom setings
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-revert-interval 0.5)
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
+ '(ein:use-auto-complete t)
+ '(ein:use-auto-complete-superpack t)
+ '(eldoc-idle-delay 3)
  '(ergoemacs-keyboard-layout "us")
  '(ergoemacs-mode-used "5.8.0")
  '(ergoemacs-theme nil)
+ '(ergoemacs-use-ergoemacs-metadown nil)
+ '(ergoemacs-use-ergoemacs-metaleft nil)
+ '(ergoemacs-use-ergoemacs-metaright nil)
+ '(ergoemacs-use-ergoemacs-metaup nil)
  '(ergoemacs-use-menus t)
  '(fringe-mode nil nil (fringe))
  '(indicate-buffer-boundaries (quote left))
+ '(markdown-command "markdown_py")
  '(pdb-path (quote C:/Python27/Lib/pdb\.py))
  '(tool-bar-mode nil)
  '(truncate-lines t)
